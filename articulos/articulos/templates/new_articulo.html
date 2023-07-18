@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}
+    Agregar Artículo 
+{% endblock %}
+{% block content %}
+<form method="POST" action="new">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="InputName">Nombre</label>
+        {{form.name}}
+    </div>
+    <div class="form-group">
+        <label for="InputDescription">Descripción</label>
+        {{form.description}}
+    </div>
+    <div class="form-group">
+        <label for="InputPrice">Precio</label>
+        {{form.price}}
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Stock</label>
+        {{form.stock}}
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Unidad</label>
+        {{form.unit}}
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Largo</label>
+        {{form.largo}}
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Ancho</label>
+        {{form.ancho}}
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Peso</label>
+        {{form.peso}}
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Color</label>
+        {{form.color}}
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Modelo</label>
+        {{form.model}}
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+{% endblock %}

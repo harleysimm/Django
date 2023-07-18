@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Listado de Artículos
+{% endblock %}
+
+{% block content %}
+<a href="new" class="btn btn-info">Nuevo Artículo</a>
+<br>
+<br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Nombre articulo</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Unidad</th>
+            <th scope="col">Largo</th>
+            <th scope="col">Ancho</th>
+            <th scope="col">Peso</th>
+            <th scope="col">Color</th>
+            <th scope="col">Modelo</th>
+        </tr>
+        <tbody>
+            {% for articulo  in articulos %}
+                <tr>
+                    <td><a href="{{articulo.id}}">{{articulo.name}}</a></td>
+                    <td><a href="{{articulo.id}}">{{articulo.description}}</a></td>
+                    <td><a href="{{articulo.id}}">{{articulo.price}}</a></td>
+                    <td><a href="{{articulo.id}}">{{articulo.stock}}</a></td>
+                    <td><a href="{{articulo.id}}">{{articulo.unit}}</a></td>
+                    <td><a href="{{articulo.id}}">{{articulo.largo}}</a></td>
+                    <td><a href="{{articulo.id}}">{{articulo.ancho}}</a></td>
+                    <td><a href="{{articulo.id}}">{{articulo.peso}}</a></td>
+                    <td><a href="{{articulo.id}}">{{articulo.color}}</a></td>
+                    <td><a href="{{articulo.id}}">{{articulo.model}}</a></td>
+                    <td><a href="/articulos/{{articulo.id}}/edit">Editar</a></td>
+                    <td><a href="/articulos/{{articulo.id}}/delete">Eliminar</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </thead>
+</table>
+
+{% endblock %}

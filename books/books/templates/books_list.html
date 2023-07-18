@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Listado de Libros
+{% endblock %}
+
+{% block content %}
+    <a href="new" class="btn btn-primary">Add Book</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Editorial</th>
+                <th>Estado</th>
+                <th>Tipo</th>
+                <th>Fav Color</th>
+                <th colspan="3" text-align="center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td><a href="{{book.id}}">{{book.titulo}}</a></td>
+                    <td><a href="{{book.id}}">{{book.editorial}}</a></td>
+                    <td><a href="{{book.id}}">{{book.state}}</a></td>
+                    <td><a href="{{book.id}}">{{book.type}}</a></td>
+                    <td><a href="{{book.id}}">{{book.preferencia}}</a></td>
+                    <td><a href="/books/{{book.id}}/edit">Editar</a></td>
+                    <td><a href="/books/{{book.id}}/delete">Eliminar</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+            

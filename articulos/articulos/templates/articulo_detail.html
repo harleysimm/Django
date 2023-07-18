@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}
+    Detalle del articulo
+{% endblock %}
+{% block content %}
+    <h1>{{articulo.name}}</h1>
+    <h2>{{articulo.description}}</h2>
+    <h2>{{articulo.price}}</h2>
+    <h2>{{articulo.stock}}</h2>
+{% endblock %}
